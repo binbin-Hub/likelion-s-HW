@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action = "{%url 'new'%}" enctype="multipart/form-data" method = "POST">
+        {% csrf_token %}
+        <p>사진 보세욤</p>
+        {{form.photo}}
+        <p>사진 이름</p>
+        <input type = "text" name = "imagename">
+        <p>사진 정보</p>
+        <input type "text" name = "imageinfo">
+        <input type="submit" value="글쓰기">
+    </form>
+</body>
+</html>

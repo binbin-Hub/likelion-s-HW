@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+    <div class="title">
+        <center>❣My JIBRI Gallery❣</center>
+    </div>
+    {% for I in six.all %}
+    <div class="container">
+        <div class = "box1">
+            <center><img src = "{{I.photo.url}}" alt = "{{I.imageinfo.url}}" style = "width : 300px; margin : 10px;"></a></center>
+        </div>
+        <div class = "box2">
+            <center>
+                {{I.imagename}} <br>
+                {{I.imageinfo}}
+            </center>
+        </div>
+        <div class = "box3">
+            <center>
+                <a href = "{% url 'new'%}">새로만들기</a>
+                <a href = "{% url 'update' I.id %}">수정하기</a>
+                <a href = "{% url 'delete' I.id %}">삭제하기</a>
+            </center>
+        </div>
+    </div>
+    {% endfor %}
+    
+</body>
+</html>
